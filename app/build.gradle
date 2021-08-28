@@ -14,6 +14,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        ndk {
+//            //选择要添加的对应 cpu 类型的 .so 库。
+//            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86'
+//            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -29,4 +37,27 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'
     implementation 'com.github.LiuGuiLinAndroid:OkHelper:V1.0'
+
+//    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+//    implementation 'com.google.code.gson:gson:2.8.5'
+//    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+//
+//    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    //retrofit网络请求框架
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    //retrofit添加Json解析返回数据
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    //retrofit添加Rxjava支持
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    //rxjava框架
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    //日志
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+//Cookie持久化管理(推荐)
+//        implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    implementation 'org.greenrobot:eventbus:3.1.1'
 }
