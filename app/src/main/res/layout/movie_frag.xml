@@ -6,11 +6,15 @@
     >
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         style="@style/pub_text"
-        android:text="movie"
-        android:textSize="30sp"
+        android:text="fdsfdsafdsas"
         />
+
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

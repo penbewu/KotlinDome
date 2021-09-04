@@ -1,9 +1,10 @@
 package com.example.kotlindome
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.PixelFormat
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.kotlindome.Fragment.JokeFrag
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //x5配制
+        window.setFormat(PixelFormat.TRANSLUCENT)
 
         initView()
     }
@@ -42,6 +46,8 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     private var tr : FragmentTransaction? = null
 
     private fun initFreg(index: Int) {
+        supportActionBar?.hide()
+
         hin()
         tr = supportFragmentManager.beginTransaction()
         when (index) {

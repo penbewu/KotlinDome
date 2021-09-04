@@ -1,11 +1,10 @@
 package com.example.kotlindome.Base
 
 import android.app.Application
+import android.util.Log
 import com.liuguilin.okhelper.BuildConfig
 import com.liuguilin.okhelper.OkHelper
-import okhttp3.logging.HttpLoggingInterceptor
-import okhttp3.OkHttpClient
-import java.util.concurrent.TimeUnit
+import com.tencent.smtt.sdk.QbSdk
 
 
 /**
@@ -26,5 +25,16 @@ class BaseApp : Application() {
 //            .writeTimeout(15, TimeUnit.SECONDS)
 //            .addInterceptor(HttpLoggingInterceptor())// 在此处添加拦截器即可，默认日志级别为BASIC
 //            .build()
+
+        //init x5
+        QbSdk.initX5Environment(this,object : QbSdk.PreInitCallback{
+            override fun onCoreInitFinished() {
+                Log.e("x5 加载成功","x5 加载成功")
+            }
+
+            override fun onViewInitFinished(p0: Boolean) {
+                Log.e("x5 加载成功$p0","x5 加载成功$p0")
+            }
+        })
     }
 }

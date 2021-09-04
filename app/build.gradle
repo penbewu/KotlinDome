@@ -5,6 +5,20 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\Administrator\\Desktop\\pub.jks')
+            storePassword '123456'
+            keyAlias = 'key0'
+            keyPassword '123456'
+        }
+        release {
+            storeFile file('C:\\Users\\Administrator\\Desktop\\pub.jks')
+            storePassword '123456'
+            keyAlias = 'key0'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
     defaultConfig {
@@ -25,26 +39,20 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'
     implementation 'com.github.LiuGuiLinAndroid:OkHelper:V1.0'
-
-//    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
-//    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
-//    implementation 'com.google.code.gson:gson:2.8.5'
-//    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
-//
-//    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
-
     //retrofit网络请求框架
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     //retrofit添加Json解析返回数据
@@ -55,9 +63,9 @@ dependencies {
     implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
     //日志
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-//Cookie持久化管理(推荐)
-//        implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    //Cookie持久化管理(推荐)
+    //        implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
-
     implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation files('libs/tbs_sdk_thirdapp_v4.3.0.185_44085_sharewithdownloadwithfile_withoutGame_obfs_20210809_201442.jar')
 }
