@@ -11,6 +11,7 @@
         android:layout_weight="1"/>
 
     <LinearLayout
+        android:id="@+id/bottom_lin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">

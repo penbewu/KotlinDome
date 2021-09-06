@@ -2,6 +2,7 @@ package com.example.kotlindome.http
 
 import com.example.kotlindome.bean.MovieBean
 import com.example.kotlindome.bean.NewsBean
+import com.example.kotlindome.bean.WeatherBean
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -16,13 +17,21 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitManger {
 
+    //新闻
     private const val Base_url = "http://v.juhe.cn/"
      const val news_url ="toutiao/index"
      private const val news_key ="3c16f6e0a13a33dccbc84179e0a0f695"
 
+    //电影
     private const val BaseMovies_url = "http://apis.juhe.cn/"
     const val movies_url ="fapig/douyin/billboard"
     private const val movies_key ="479d0e11b4afa31b286fc8fd9923fb06"
+
+    //天气
+    const val weather_url ="fapig/douyin/billboard"
+    private const val weather_key ="6284e91c5ed9e930af8f1d9978effce9"
+//
+
 
     private val retrofit :Retrofit by lazy {
         val logging = HttpLoggingInterceptor()
@@ -72,6 +81,10 @@ object RetrofitManger {
 
     fun getMovie():Call<MovieBean>{
         return apiServiceMovie.getMovie(movies_key,"hot_video",10 )
+    }
+
+    fun getWeath(city:String):Call<WeatherBean>{
+        return apiServiceMovie.getWeather(weather_key,city )
     }
 
 }

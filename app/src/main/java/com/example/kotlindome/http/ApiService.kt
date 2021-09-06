@@ -2,6 +2,7 @@ package com.example.kotlindome.http
 
 import com.example.kotlindome.bean.MovieBean
 import com.example.kotlindome.bean.NewsBean
+import com.example.kotlindome.bean.WeatherBean
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -24,6 +25,11 @@ interface ApiService  {
     //电影  //key=&type=hot_video
     @GET(RetrofitManger.movies_url)
     fun getMovie(@Query("key")key:String,
-                @Query("type")type:String,
-                @Query("size")size:Int) :Call<MovieBean>
+                 @Query("type")type:String,
+                 @Query("size")size:Int) :Call<MovieBean>
+
+    //天气  //key=&type=hot_video
+    @GET(RetrofitManger.weather_url)
+    fun getWeather(@Query("key")key:String,
+                 @Query("city")type:String) :Call<WeatherBean>
 }
