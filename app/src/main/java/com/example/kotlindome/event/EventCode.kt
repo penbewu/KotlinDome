@@ -6,5 +6,7 @@ package com.example.kotlindome.event
  * 描述
  */
 object EventCode {
-    const val goto = 1
+    const val GOTO = 1  //返回首页
+
+    const val TYPE_WEATHER_TITLE = 2  //返回首页
 }

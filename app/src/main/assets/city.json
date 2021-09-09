@@ -1,0 +1,214 @@
+{
+  "reason":"查询成功!",
+  "result":[
+    {
+      "id": "1",
+      "province": "北京",
+      "city": "北京",
+      "district": "北京0"
+    },
+    {
+      "id": "1",
+      "province": "北京",
+      "city": "北京",
+      "district": "北京1"
+    },
+    {
+      "id": "1",
+      "province": "北京",
+      "city": "北京",
+      "district": "北京2"
+    },
+    {
+      "id": "1",
+      "province": "北京",
+      "city": "北京",
+      "district": "北京3"
+    },
+    {
+      "id": "1",
+      "province": "北京",
+      "city": "北京",
+      "district": "北京4"
+    },
+    {
+      "id": "1",
+      "province": "北京",
+      "city": "北京",
+      "district": "北京5"
+    },
+    {
+      "id": "1",
+      "province": "北京",
+      "city": "北京",
+      "district": "北京6"
+    },
+    {
+      "id": "1",
+      "province": "a",
+      "city": "a",
+      "district": "a0"
+    },
+    {
+      "id": "1",
+      "province": "a",
+      "city": "a",
+      "district": "a1"
+    },
+    {
+      "id": "1",
+      "province": "a",
+      "city": "a",
+      "district": "a2"
+    },
+    {
+      "id": "1",
+      "province": "a",
+      "city": "a",
+      "district": "a3"
+    },
+    {
+      "id": "1",
+      "province": "a",
+      "city": "a",
+      "district": "a4"
+    },
+    {
+      "id": "1",
+      "province": "a",
+      "city": "a",
+      "district": "a5"
+    },
+    {
+      "id": "1",
+      "province": "a",
+      "city": "a",
+      "district": "a6"
+    },
+    {
+      "id": "1",
+      "province": "b",
+      "city": "b",
+      "district": "b0"
+    },
+    {
+      "id": "1",
+      "province": "b",
+      "city": "b",
+      "district": "b1"
+    },
+    {
+      "id": "1",
+      "province": "b",
+      "city": "b",
+      "district": "b2"
+    },
+    {
+      "id": "1",
+      "province": "b",
+      "city": "b",
+      "district": "b3"
+    },
+    {
+      "id": "1",
+      "province": "b",
+      "city": "b",
+      "district": "b4"
+    },
+    {
+      "id": "1",
+      "province": "b",
+      "city": "b",
+      "district": "b5"
+    },
+    {
+      "id": "1",
+      "province": "b",
+      "city": "b",
+      "district": "b6"
+    },{
+      "id": "1",
+      "province": "c",
+      "city": "c",
+      "district": "c0"
+    },
+    {
+      "id": "1",
+      "province": "c",
+      "city": "c",
+      "district": "c1"
+    },
+    {
+      "id": "1",
+      "province": "c",
+      "city": "c",
+      "district": "c2"
+    },
+    {
+      "id": "1",
+      "province": "c",
+      "city": "c",
+      "district": "c3"
+    },
+    {
+      "id": "1",
+      "province": "c",
+      "city": "c",
+      "district": "c4"
+    },
+    {
+      "id": "1",
+      "province": "c",
+      "city": "c",
+      "district": "c5"
+    },
+    {
+      "id": "1",
+      "province": "c",
+      "city": "c",
+      "district": "c6"
+    },{
+      "id": "1",
+      "province": "d",
+      "city": "d",
+      "district": "d0"
+    },
+    {
+      "id": "1",
+      "province": "d",
+      "city": "d",
+      "district": "d1"
+    },
+    {
+      "id": "1",
+      "province": "d",
+      "city": "d",
+      "district": "d2"
+    },
+    {
+      "id": "1",
+      "province": "d",
+      "city": "d",
+      "district": "d3"
+    },
+    {
+      "id": "1",
+      "province": "d",
+      "city": "d",
+      "district": "d4"
+    },
+    {
+      "id": "1",
+      "province": "d",
+      "city": "d",
+      "district": "d5"
+    },
+    {
+      "id": "1",
+      "province": "d",
+      "city": "d",
+      "district": "d6"
+    }
+  ],
+  "error_code":0
+}

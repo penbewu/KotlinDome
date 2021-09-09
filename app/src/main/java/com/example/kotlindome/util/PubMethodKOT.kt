@@ -2,9 +2,7 @@ package com.example.kotlindome.util
 
 import android.content.Context
 import android.content.res.AssetManager
-import com.example.kotlindome.bean.MovieBean
-import com.example.kotlindome.bean.NewsBean
-import com.example.kotlindome.bean.WeatherBean
+import com.example.kotlindome.bean.*
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -66,6 +64,25 @@ object PubMethodKOT {
         if (!StringUtils.isEmpty(JsonData)) {
             var cityBeans = GsonUtil.fromJson(JsonData, WeatherBean::class.java)
             return cityBeans
+        }
+        return null
+    }
+
+    fun getCity(context: Context) : CityListBean ?{
+        //解析数据
+        //获取assets目录下的json文件数据
+        val JsonData: String = getJson("city.json",context)
+        if (!StringUtils.isEmpty(JsonData)) {
+            var cityBeans = GsonUtil.fromJson(JsonData, CityListBean::class.java)
+            return cityBeans
+        }
+        return null
+    }
+
+    fun getJoke(context: Context):JokeBean?{
+        val jsonBean = getJson("joke.json",context)
+        if (!StringUtils.isEmpty(jsonBean)){
+            return GsonUtil.fromJson(jsonBean,JokeBean::class.java)
         }
         return null
     }

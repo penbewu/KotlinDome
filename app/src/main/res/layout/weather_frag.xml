@@ -45,7 +45,6 @@
             android:textColor="@android:color/white"
             />
 
-
         <TextView
             android:id="@+id/wind_direction_tex"
             android:layout_height="match_parent"
@@ -57,7 +56,6 @@
             android:drawablePadding="3dp"
             android:textColor="@android:color/white"
             />
-
 
         <TextView
             android:id="@+id/wind_power_tex"
@@ -71,7 +69,6 @@
             android:drawablePadding="3dp"
             />
 
-
         <TextView
             android:id="@+id/quality_tex"
             android:textColor="@android:color/white"
@@ -84,10 +81,14 @@
             android:drawablePadding="3dp"
             />
 
-
     </LinearLayout>
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        />
 
 
 </LinearLayout>

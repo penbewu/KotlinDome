@@ -1,5 +1,6 @@
 package com.example.kotlindome.http
 
+import com.example.kotlindome.bean.JokeBean
 import com.example.kotlindome.bean.MovieBean
 import com.example.kotlindome.bean.NewsBean
 import com.example.kotlindome.bean.WeatherBean
@@ -18,43 +19,25 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitManger {
 
     //新闻
-    private const val Base_url = "http://v.juhe.cn/"
-     const val news_url ="toutiao/index"
-     private const val news_key ="3c16f6e0a13a33dccbc84179e0a0f695"
+    private const val BASE_URL = "http://v.juhe.cn/"
+    const val NEWS_URL = "toutiao/index"
+    private const val NEWS_KEY = "3c16f6e0a13a33dccbc84179e0a0f695"
 
     //电影
-    private const val BaseMovies_url = "http://apis.juhe.cn/"
-    const val movies_url ="fapig/douyin/billboard"
-    private const val movies_key ="479d0e11b4afa31b286fc8fd9923fb06"
+    private const val BASEMOVIES_URL = "http://apis.juhe.cn/"
+    const val MOVIES_URL = "fapig/douyin/billboard"
+    private const val MOVIES_KEY = "479d0e11b4afa31b286fc8fd9923fb06"
 
     //天气
-    const val weather_url ="fapig/douyin/billboard"
-    private const val weather_key ="6284e91c5ed9e930af8f1d9978effce9"
-//
+    const val WEATHER_URL = "fapig/douyin/billboard"
+    private const val WEATHER_KEY = "6284e91c5ed9e930af8f1d9978effce9"
 
+    //
+   //笑话
+    const val JOKE_URL = "joke/randJoke.php"
+    private const val JOKE_KEY = "21278605c60341940a1a2c453402f528"
 
-    private val retrofit :Retrofit by lazy {
-        val logging = HttpLoggingInterceptor()
-        logging.level = HttpLoggingInterceptor.Level.BODY
-
-        val httpClient = OkHttpClient.Builder()
-        httpClient.addInterceptor(logging)
-
-            Retrofit.Builder()
-            .baseUrl(Base_url)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(httpClient.build())
-            .build()
-    }
-
-    private val apiService :ApiService by lazy {
-        retrofit.create(ApiService::class.java)
-    }
-
-    private val retrofitMovie :Retrofit by lazy {
+    private val retrofit: Retrofit by lazy {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
 
@@ -62,7 +45,7 @@ object RetrofitManger {
         httpClient.addInterceptor(logging)
 
         Retrofit.Builder()
-            .baseUrl(BaseMovies_url)
+            .baseUrl(BASE_URL)
 //                .addConverterFactory(GsonConverterFactory.create())
 //                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 //                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -71,20 +54,45 @@ object RetrofitManger {
             .build()
     }
 
-    private val apiServiceMovie :ApiService by lazy {
+    private val apiService: ApiService by lazy {
+        retrofit.create(ApiService::class.java)
+    }
+
+    private val retrofitMovie: Retrofit by lazy {
+        val logging = HttpLoggingInterceptor()
+        logging.level = HttpLoggingInterceptor.Level.BODY
+
+        val httpClient = OkHttpClient.Builder()
+        httpClient.addInterceptor(logging)
+
+        Retrofit.Builder()
+            .baseUrl(BASEMOVIES_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(httpClient.build())
+            .build()
+    }
+
+    private val apiServiceMovie: ApiService by lazy {
         retrofitMovie.create(ApiService::class.java)
     }
 
-    fun getNews(type: String, page: Int, page_size: Int, is_filter: Int) : Call<NewsBean> {
-        return apiService.getNews(type,page,page_size,is_filter,news_key )
+    fun getNews(type: String, page: Int, page_size: Int, is_filter: Int): Call<NewsBean> {
+        return apiService.getNews(type, page, page_size, is_filter, NEWS_KEY)
     }
 
-    fun getMovie():Call<MovieBean>{
-        return apiServiceMovie.getMovie(movies_key,"hot_video",10 )
+    fun getMovie(): Call<MovieBean> {
+        return apiServiceMovie.getMovie(MOVIES_KEY, "hot_video", 10)
     }
 
-    fun getWeath(city:String):Call<WeatherBean>{
-        return apiServiceMovie.getWeather(weather_key,city )
+    fun getWeath(city: String): Call<WeatherBean> {
+        return apiServiceMovie.getWeather(WEATHER_KEY, city)
+    }
+    //sort=desc&page=1&pagesize=10&time=4212132131&key=21278605c60341940a1a2c453402f528
+    fun  getJoke():Call<JokeBean>{
+        return apiService.getJoke( JOKE_KEY)
     }
 
 }

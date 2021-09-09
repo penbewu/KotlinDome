@@ -66,7 +66,7 @@ class MovieFrag : BaseFragment(), View.OnClickListener {
                 R.id.playbutton -> video.start()
                 R.id.stopbutton -> video.stopPlayback()
                 R.id.fa_but -> {
-                   EventBusUtils.post(EventMessage(EventCode.goto))
+                   EventBusUtils.post(EventMessage(EventCode.GOTO))
                 }
 
             }
